@@ -10,16 +10,21 @@ class Counter extends Component {
         fontWeight:'bold'
     }
     render() { 
-        let classes=" badge m-2 badge-";
-        classes += this.state.count===0 ? "warning":"primary";
+        
         return(
             //To avoid Extra div use React.Fragment 
             <React.Fragment>
                 {/* add value in this element dynamicly  */}
-                <span style={this.styles} className={classes}>{this.formatCount()}</span>
+                <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button className="btn btn-secondary btn-sm">Increament</button>
             </React.Fragment>
         );
+    }
+
+    getBadgeClasses() {
+        let classes = " badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return classes;
     }
 
     formatCount(){
