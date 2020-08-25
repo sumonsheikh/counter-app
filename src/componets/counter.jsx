@@ -4,14 +4,18 @@ class Counter extends Component {
     //that required of the component
     state = {
         count:0
-      }
+      };
+    styles={
+        fontSize:10,
+        fontWeight:'bold'
+    }
     render() { 
         return(
             //To avoid Extra div use React.Fragment 
             <React.Fragment>
                 {/* add value in this element dynamicly  */}
-                <span>{this.formatCount()}</span>
-                <button>Increament</button>
+                <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
+                <button className="btn btn-secondary btn-sm">Increament</button>
             </React.Fragment>
         );
     }
