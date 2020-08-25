@@ -12,16 +12,18 @@ class Counter extends Component {
     };
     //binding event handler
     handleIcreament=()=>{
+       
         //increament the value of count
          this.setState({count:this.state.count +1});
     };
+   
     render() { 
         
         return(
             
         <div>
             <span className={this.getBadgeClasses()}>{this.formatCounter()}</span>
-            <button onClick={this.handleIcreament} className="btn btn-success btn-sm">Increament</button>
+            <button onClick={()=>this.handleIcreament()} className="btn btn-success btn-sm">Increament</button>
             {this.state.tags.length ===0 && "please enter a tag"}
         </div>
         );
