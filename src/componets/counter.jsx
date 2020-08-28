@@ -27,7 +27,7 @@ class Counter extends Component {
             <button onClick={()=>this.handleIcreament()} className="btn btn-success btn-sm">Increament</button>
             {this.state.tags.length ===0 && "please enter a tag"}
             {/* riging event */}
-            <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2">Delete</button>
+            <button onClick={()=>this.props.onDelete(this.props.id)} className="btn btn-danger btn-sm m-2">Delete</button>
         </div>
         );
     }
