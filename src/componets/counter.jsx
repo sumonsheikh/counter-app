@@ -3,7 +3,7 @@ class Counter extends Component {
     //state is very special property of react component that contains all data
     //that required of the component
     state = {
-        count:0,
+        count:this.props.value,
         tags:["tag1"],
       };
     rederingTag(){
@@ -18,7 +18,7 @@ class Counter extends Component {
     };
    
     render() { 
-        
+       
         return(
             
         <div>
