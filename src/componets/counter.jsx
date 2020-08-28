@@ -3,7 +3,7 @@ class Counter extends Component {
     //state is very special property of react component that contains all data
     //that required of the component
     state = {
-        count:this.props.value,
+        value:this.props.value,
         tags:["tag1"],
       };
     rederingTag(){
@@ -13,16 +13,16 @@ class Counter extends Component {
     //binding event handler
     handleIcreament=()=>{
        
-        //increament the value of count
-         this.setState({count:this.state.count +1});
+        //increament the value of value
+         this.setState({value:this.state.value +1});
     };
    
     render() { 
-       
+        
         return(
             
         <div>
-            <h1>#Title</h1>
+            {this.props.children}
             <span className={this.getBadgeClasses()}>{this.formatCounter()}</span>
             <button onClick={()=>this.handleIcreament()} className="btn btn-success btn-sm">Increament</button>
             {this.state.tags.length ===0 && "please enter a tag"}
@@ -32,13 +32,13 @@ class Counter extends Component {
 
     getBadgeClasses() {
         let classes = "badge badge-primary m-2 badge-";
-        classes += this.state.count === 0 ? "warning" : "primary";
+        classes += this.state.value === 0 ? "warning" : "primary";
         return classes;
     }
 
     formatCounter(){
-        const {count}=this.state;
-        return count===0? "zero": count;
+        const {value}=this.state;
+        return value===0? "zero": value;
     }
    
 }
