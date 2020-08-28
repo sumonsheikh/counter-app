@@ -22,10 +22,12 @@ class Counter extends Component {
         return(
             
         <div>
-            {this.props.children}
+            <h4>{this.props.id}</h4>
             <span className={this.getBadgeClasses()}>{this.formatCounter()}</span>
             <button onClick={()=>this.handleIcreament()} className="btn btn-success btn-sm">Increament</button>
             {this.state.tags.length ===0 && "please enter a tag"}
+            {/* riging event */}
+            <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2">Delete</button>
         </div>
         );
     }
