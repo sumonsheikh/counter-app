@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const NavBAr = ({totalCounters}) => {
+const NavBar = ({totalCounters}) => {
     return (
         <nav className="navbar navbar-light bg-light">
             <a href="#" className="navbar-brand">
@@ -11,6 +11,6 @@ const NavBAr = ({totalCounters}) => {
       );
 }
  
-export default NavBAr;
+export default NavBar;
 
 
